@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ChatbotWidget from './ChatbotWidget';
 
 export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -62,6 +63,8 @@ export default function Layout({ children }) {
       <main className="main">
         {children}
       </main>
+
+      <ChatbotWidget />
 
       {/* Bottom Navigation for Mobile */}
       <nav className="bottom-nav">
