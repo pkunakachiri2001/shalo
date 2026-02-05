@@ -1,4 +1,4 @@
-# 🚀 QUICK START GUIDE FOR SHALOM
+# 🚀 QUICK START GUIDE
 
 ## ⚡ Run the App in 3 Steps:
 
@@ -42,7 +42,7 @@ npm run dev
    vercel
    ```
 
-3. You'll get a URL like: `lexguard-shalom.vercel.app`
+3. You'll get a URL like: `lexguard-app.vercel.app`
 4. Access this URL from ANYWHERE - including Zimbabwe!
 5. Install on phone: Open URL → Menu → "Add to Home Screen"
 

@@ -126,7 +126,7 @@ export default function Home() {
       <footer className="home-footer">
         <div className="footer-content">
           <p className="footer-tagline">
-            <strong>Built for Shalom Chikaka</strong> 🇿🇼
+            <strong>Built for CyberGuard Pro</strong>
           </p>
           <p className="footer-text">
             Empowering law students and citizens with knowledge and tools to navigate cyber law

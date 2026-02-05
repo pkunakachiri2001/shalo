@@ -79,7 +79,7 @@ This opens Android Studio with your project
 
 ## 🎯 **MY RECOMMENDATION:**
 
-### For Shalom's Project:
+### For the Project:
 
 **Use METHOD 1 (PWA Builder)** because:
 - ✅ Takes only 5 minutes
@@ -170,4 +170,4 @@ All three work perfectly! For the project demo, I recommend:
 2. Create APK with PWA Builder (5 min)
 3. Also demo PWA installation (modern approach)
 
-**Shalom will have a COMPLETE, PROFESSIONAL app to present! 🚀**
+**You will have a COMPLETE, PROFESSIONAL app to present! 🚀**

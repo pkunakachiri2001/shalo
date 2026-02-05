@@ -70,8 +70,8 @@ Vercel will:
 3. Run: `vercel --prod`
 4. Done! Updates live instantly!
 
-**Share with Shalom?**
-Just send her the Vercel URL! She can:
+**Share with stakeholders?**
+Just send the Vercel URL! They can:
 - Access it from anywhere (even Zimbabwe!)
 - Install it on her phone
 - Use it for her presentation

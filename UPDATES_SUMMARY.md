@@ -16,9 +16,8 @@
   - **Resources**: Help Center, Disclaimer, Privacy (placeholders)
 - ✅ **PROMINENT CREATOR CREDITS**:
   ```
-  Created by: Shalom Chikaka 🇿🇼
-  BBALLB Student | Vishwakarma University Pune
-  Law & Technology Project
+   Created by: CyberGuard Pro Team
+   Law & Technology Project
   ```
 - ✅ Copyright and disclaimer at bottom
 - ✅ Mobile-responsive design
@@ -29,7 +28,7 @@
   2. **What We Offer**: 6 feature cards explaining each module
   3. **Creator Section**: 
      - Beautiful showcase with Zimbabwe flag 🇿🇼
-     - Shalom Chikaka's name prominently displayed
+   - Creator attribution prominently displayed
      - University details and background story
      - 4 highlight cards (Education, Background, Focus, Vision)
   4. **Technology Stack**: React, PWA, CSS3, Vite
@@ -68,7 +67,7 @@
    - Android: Chrome → Menu (⋮) → "Add to Home screen" or "Install app"
    - iPhone: Safari → Share → "Add to Home Screen"
 3. **Navigate**: Use the bottom navigation bar or hamburger menu (☰)
-4. **Check About page**: Click "About" in menu to see Shalom's credits
+4. **Check About page**: Click "About" in menu to see creator credits
 5. **Scroll to footer**: See creator attribution at the bottom of every page
 
 ## 🎨 Design Highlights
@@ -107,7 +106,7 @@
 
 ## 🎓 Creator Credits Locations
 
-Shalom Chikaka's name appears in **THREE prominent places**:
+Creator attribution appears in **THREE prominent places**:
 
 1. **Footer** (every page): 
    - Large creator section with name, flag, and university
@@ -171,4 +170,4 @@ For any issues or questions about the app:
 
 **🎉 CONGRATULATIONS! LexGuard is now a professional, production-ready app with proper design, creator credits, and all the features requested!**
 
-Created with ❤️ for **Shalom Chikaka** | BBALLB Student | Vishwakarma University Pune 🇿🇼 → 🇮🇳
+Created with ❤️ for **CyberGuard Pro** | Law & Technology Project

@@ -225,7 +225,7 @@ SHALO/
 
 ## 🌍 International Perspective
 
-LexGuard uniquely addresses the needs of international students like Shalom by:
+LexGuard uniquely addresses the needs of international students by:
 
 - Comparing Indian and Zimbabwean cyber laws
 - Highlighting cross-border legal tech opportunities
@@ -263,7 +263,7 @@ Edit [src/index.css](src/index.css) - modify CSS variables at the top
 
 ## 🚀 Deployment Checklist
 
-Before presenting to Shalom:
+Before presenting:
 
 - [ ] Test on mobile browser
 - [ ] Verify PWA installation works
@@ -291,9 +291,9 @@ Before presenting to Shalom:
 
 ---
 
-## 🎓 For Shalom
+## 🎓 For Project Owner
 
-Dear Shalom,
+Dear Project Owner,
 
 This app is built specifically for your **Law & Technology Project** at Vishwakarma University Pune. It combines your initial idea of cyber law education with additional features that make it a comprehensive legal companion.
 
@@ -318,7 +318,7 @@ This app is built specifically for your **Law & Technology Project** at Vishwaka
 - Show the Academy with quiz functionality
 - Demonstrate the Emergency Tools
 - Explain the Career opportunities section
-- Highlight your unique advantage as a Zimbabwean student studying in India
+- Highlight the international comparison angle
 
 **Good luck with your project! 🌟**
 
@@ -332,7 +332,7 @@ MIT License - Free for educational and personal use
 
 ## 👨‍💻 Credits
 
-**Concept:** Shalom Chikaka  
+**Concept:** Project Owner  
 **Development:** AI-Assisted Development  
 **Institution:** Vishwakarma University Pune  
 **Project:** Law & Technology - Mobile App Development  

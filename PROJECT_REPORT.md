@@ -3,7 +3,7 @@
 ## LexGuard: Digital Legal Companion
 ### Law & Technology Project - Vishwakarma University Pune
 
-**Student:** Shalom Chikaka  
+**Student:** Project Owner  
 **Program:** BBALLB  
 **Date:** January 2026
 
@@ -558,7 +558,7 @@ This project demonstrates that legal technology need not be complex to be powerf
 
 ---
 
-**Project Developed By:** Shalom Chikaka  
+**Project Developed By:** Project Owner  
 **Institution:** Vishwakarma University Pune  
 **Program:** BBALLB  
 **Course:** Law & Technology  

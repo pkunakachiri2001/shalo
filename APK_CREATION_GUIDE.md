@@ -9,10 +9,10 @@ npm install @capacitor/core @capacitor/cli @capacitor/android
 
 ### Step 2: Initialize Capacitor
 ```powershell
-npx cap init LexGuard com.shalom.lexguard
+npx cap init LexGuard com.lexguard.app
 ```
 - App Name: LexGuard
-- Package ID: com.shalom.lexguard
+- Package ID: com.lexguard.app
 
 ### Step 3: Build Your App
 ```powershell
@@ -86,7 +86,7 @@ If you have an Android phone:
 
 ## 🎯 WHICH METHOD TO USE?
 
-### **For Shalom's Project:**
+### **For the Project:**
 ✅ **Use PWA Installation (Option 1)** - It's:
 - Faster (no build needed)
 - Easier (no Android Studio)
@@ -119,7 +119,7 @@ Run these commands in order:
 npm install @capacitor/core @capacitor/cli @capacitor/android
 
 # 2. Initialize
-npx cap init LexGuard com.shalom.lexguard --web-dir=dist
+npx cap init LexGuard com.lexguard.app --web-dir=dist
 
 # 3. Build the web app
 npm run build
@@ -184,7 +184,7 @@ Total time: **5-10 minutes!**
 
 ## ⚡ MY RECOMMENDATION:
 
-**For Shalom's project presentation:**
+**For the project presentation:**
 
 1. **Deploy online with Vercel** (2 minutes)
    ```powershell

@@ -407,4 +407,4 @@ README.md                               - Updated documentation
 **Status**: ✅ Competition Ready
 **Last Updated**: February 5, 2026
 **Commit**: 22c58a5 (and previous)
-**Live**: https://github.com/pkunakachiri2001/shaloM.git
+**Live**: (update repository URL)

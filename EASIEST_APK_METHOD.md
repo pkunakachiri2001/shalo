@@ -107,4 +107,4 @@ Say:
 
 Everything is ready. Just run `vercel` and use PWA Builder.
 
-**5 minutes from now, Shalom will have an installable app on her phone!** 🚀📱
+**5 minutes from now, you will have an installable app on your phone!** 🚀📱
