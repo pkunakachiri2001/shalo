@@ -466,7 +466,27 @@ body::before {
 
 @media (max-width: 900px) {
   .header-actions {
+    gap: 0.25rem;
+  }
+  
+  .header-action-btn {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .header-action-btn span:last-child {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 0.2rem;
+  }
+  
+  .header-action-btn {
+    padding: 0.3rem 0.45rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -479,23 +499,86 @@ body::before {
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: background 0.2s;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-toggle:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Desktop Navigation */
+/* Navigation Sidebar */
 .nav {
-  display: none; /* Hidden by default, shown via menu toggle on mobile */
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  max-width: 85vw;
+  height: 100vh;
   background: white;
-  box-shadow: var(--shadow-lg);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
   padding: var(--spacing-lg);
+  z-index: 200;
+  overflow-y: auto;
+  transition: right 0.3s ease;
 }
 
 .nav-open {
-  display: block;
+  right: 0;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.nav-header h3 {
+  font-size: 1.25rem;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.nav-close {
+  background: var(--gray-100);
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav-close:hover {
+  background: var(--gray-200);
+}
+
+.nav-divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: var(--spacing-md) 0;
+}
+
+.nav-section h4 {
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .nav-item {
