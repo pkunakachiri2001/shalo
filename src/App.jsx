@@ -1,39 +1,45 @@
+import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
+import LoadingFallback from './components/LoadingFallback';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import Academy from './pages/Academy';
-import CrimeIdentifier from './pages/CrimeIdentifier';
-import EmergencyTools from './pages/EmergencyTools';
-import News from './pages/News';
-import Career from './pages/Career';
-import About from './pages/About';
-import Dashboard from './pages/Dashboard';
-import Bookmarks from './pages/Bookmarks';
-import CaseStudies from './pages/CaseStudies';
-import IncidentSimulator from './pages/IncidentSimulator';
-import Timeline from './pages/Timeline';
-import ResourceLibrary from './pages/ResourceLibrary';
+
+// Lazy load all page components for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const Academy = lazy(() => import('./pages/Academy'));
+const CrimeIdentifier = lazy(() => import('./pages/CrimeIdentifier'));
+const EmergencyTools = lazy(() => import('./pages/EmergencyTools'));
+const News = lazy(() => import('./pages/News'));
+const Career = lazy(() => import('./pages/Career'));
+const About = lazy(() => import('./pages/About'));
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Bookmarks = lazy(() => import('./pages/Bookmarks'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const IncidentSimulator = lazy(() => import('./pages/IncidentSimulator'));
+const Timeline = lazy(() => import('./pages/Timeline'));
+const ResourceLibrary = lazy(() => import('./pages/ResourceLibrary'));
 
 function App() {
   return (
     <ErrorBoundary>
       <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/academy" element={<Academy />} />
-          <Route path="/identifier" element={<CrimeIdentifier />} />
-          <Route path="/emergency" element={<EmergencyTools />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/bookmarks" element={<Bookmarks />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/simulator" element={<IncidentSimulator />} />
-          <Route path="/timeline" element={<Timeline />} />
-          <Route path="/resources" element={<ResourceLibrary />} />
-        </Routes>
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/academy" element={<Academy />} />
+            <Route path="/identifier" element={<CrimeIdentifier />} />
+            <Route path="/emergency" element={<EmergencyTools />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/bookmarks" element={<Bookmarks />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/simulator" element={<IncidentSimulator />} />
+            <Route path="/timeline" element={<Timeline />} />
+            <Route path="/resources" element={<ResourceLibrary />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </ErrorBoundary>
   );

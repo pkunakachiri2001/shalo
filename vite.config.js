@@ -7,6 +7,15 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4173
   },
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js',
+    globals: true,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html']
+    }
+  },
   preview: {
     host: '0.0.0.0',
     port: 4173,
