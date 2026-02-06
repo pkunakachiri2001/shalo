@@ -4678,6 +4678,12 @@ select:focus-visible {
     color: #4b5563;
   }
 
+  .quiz-lock-note {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #b45309;
+  }
+
   .quiz-container {
     max-width: 800px;
     margin: 0 auto;

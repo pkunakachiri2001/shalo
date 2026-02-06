@@ -944,6 +944,9 @@ export default function EnhancedAcademy() {
 
   // Lesson/Quiz View (when module selected)
   if (selectedModule) {
+    const allLessonsCompleted = selectedModule.lessons.every((lesson) =>
+      completedLessons[getLessonKey(selectedCourse.id, selectedModule.moduleId, lesson.id)]
+    );
     if (quizMode && selectedModule.quiz) {
       return (
         <div className="page academy-page-enhanced">
@@ -1121,7 +1124,17 @@ export default function EnhancedAcademy() {
             <div className="quiz-section">
               <h3>✅ Module Quiz</h3>
               <p>Test your understanding with {selectedModule.quiz.questions.length} questions</p>
-              <button className="btn-primary" onClick={() => setQuizMode(true)}>Start Quiz →</button>
+              <button
+                className="btn-primary"
+                onClick={() => setQuizMode(true)}
+                disabled={!allLessonsCompleted}
+                title={!allLessonsCompleted ? 'Complete all lessons to unlock the quiz.' : 'Start quiz'}
+              >
+                Start Quiz →
+              </button>
+              {!allLessonsCompleted && (
+                <p className="quiz-lock-note">Complete all lessons to unlock the quiz.</p>
+              )}
             </div>
           )}
         </div>
