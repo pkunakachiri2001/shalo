@@ -1,5 +1,7 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { App as CapacitorApp } from '@capacitor/app';
+import { Capacitor } from '@capacitor/core';
 import ChatbotWidget from './ChatbotWidget';
 import Search from './Search';
 import ThemeToggle from './ThemeToggle';
@@ -8,6 +10,8 @@ import Breadcrumbs from './Breadcrumbs';
 export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const backPromptActive = useRef(false);
 
   const navItems = [
     { path: '/', label: 'Home', icon: '🏠' },
@@ -21,6 +25,39 @@ export default function Layout({ children }) {
     { path: '/timeline', label: 'Timeline', icon: '📅' },
     { path: '/resources', label: 'Resources', icon: '📚' },
   ];
+
+  useEffect(() => {
+    if (!Capacitor.isNativePlatform()) {
+      return undefined;
+    }
+
+    const backListener = CapacitorApp.addListener('backButton', ({ canGoBack }) => {
+      if (menuOpen) {
+        setMenuOpen(false);
+        return;
+      }
+
+      if (canGoBack && location.pathname !== '/') {
+        navigate(-1);
+        return;
+      }
+
+      if (backPromptActive.current) {
+        return;
+      }
+
+      backPromptActive.current = true;
+      const shouldExit = window.confirm('Do you want to close CyberGuard Pro?');
+      backPromptActive.current = false;
+      if (shouldExit) {
+        CapacitorApp.exitApp();
+      }
+    });
+
+    return () => {
+      backListener.remove();
+    };
+  }, [location.pathname, menuOpen, navigate]);
 
   return (
     <div className="app">
