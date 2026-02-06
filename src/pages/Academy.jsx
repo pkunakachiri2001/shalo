@@ -23,16 +23,10 @@ const courses = [
           {
             id: 1,
             title: 'What is Cyber Law?',
-            type: 'video',
-            duration: '8 min',
+            type: 'reading',
+            duration: '10 min',
             content: `
               <div class="lesson-content">
-                <div class="video-placeholder">
-                  <div class="video-icon">▶️</div>
-                  <p>Video: Introduction to Cyber Law Landscape</p>
-                  <small>In a full version, this would be an embedded video</small>
-                </div>
-
                 <h3>Understanding Cyber Law</h3>
                 <p class="lead">Cyber law, also known as IT law or internet law, is the legal framework that governs digital activities, internet usage, and computer-related crimes.</p>
 
@@ -526,8 +520,8 @@ const courses = [
           {
             id: 1,
             title: 'Hacking & Unauthorized Access',
-            type: 'video',
-            duration: '15 min',
+            type: 'reading',
+            duration: '18 min',
             content: `
               <div class="lesson-content">
                 <h3>Hacking & Unauthorized Access</h3>
@@ -764,10 +758,50 @@ export default function EnhancedAcademy() {
   const [quizMode, setQuizMode] = useState(false);
   const [quizAnswers, setQuizAnswers] = useState({});
   const [quizScore, setQuizScore] = useState(null);
+  const [completedLessons, setCompletedLessons] = useState({});
+  const [completionPrompt, setCompletionPrompt] = useState(null);
   const { updateProgress } = useData();
 
-  const handleLessonComplete = (courseId, moduleId, lessonId) => {
-    updateProgress(courseId, moduleId, lessonId);
+  const getLessonKey = (courseId, moduleId, lessonId) => `${courseId}-${moduleId}-${lessonId}`;
+
+  const getNextStep = (course, module, lesson) => {
+    const lessonIndex = module.lessons.findIndex(item => item.id === lesson.id);
+    const nextLesson = module.lessons[lessonIndex + 1];
+
+    if (nextLesson) {
+      return { type: 'lesson', label: nextLesson.title, target: nextLesson };
+    }
+
+    if (module.quiz) {
+      return { type: 'quiz', label: 'Module Quiz', target: null };
+    }
+
+    return { type: 'modules', label: 'Back to Modules', target: null };
+  };
+
+  const handleLessonComplete = (courseId, moduleId, lesson) => {
+    const key = getLessonKey(courseId, moduleId, lesson.id);
+    setCompletedLessons(prev => ({ ...prev, [key]: true }));
+    updateProgress(courseId, moduleId, lesson.id);
+    const nextStep = getNextStep(selectedCourse, selectedModule, lesson);
+    setCompletionPrompt({ key, nextStep });
+  };
+
+  const handleContinueFromCompletion = (nextStep) => {
+    if (!nextStep) return;
+    setCompletionPrompt(null);
+
+    if (nextStep.type === 'lesson') {
+      setSelectedLesson(nextStep.target);
+      return;
+    }
+
+    if (nextStep.type === 'quiz') {
+      setQuizMode(true);
+      return;
+    }
+
+    setSelectedModule(null);
   };
 
   const handleQuizSubmit = () => {
@@ -996,6 +1030,10 @@ export default function EnhancedAcademy() {
     }
 
     if (selectedLesson) {
+      const completionKey = getLessonKey(selectedCourse.id, selectedModule.moduleId, selectedLesson.id);
+      const isCompleted = Boolean(completedLessons[completionKey]);
+      const promptForLesson = completionPrompt?.key === completionKey ? completionPrompt : null;
+
       return (
         <div className="page academy-page-enhanced">
           <div className="lesson-header">
@@ -1012,12 +1050,35 @@ export default function EnhancedAcademy() {
           <div className="lesson-content-container">
             <div className="lesson-body" dangerouslySetInnerHTML={{ __html: selectedLesson.content }} />
             <div className="lesson-footer">
-              <button className="btn-primary" onClick={() => {
-                handleLessonComplete(selectedCourse.id, selectedModule.moduleId, selectedLesson.id);
-                setSelectedLesson(null);
-              }}>
-                Mark Complete & Continue →
-              </button>
+              {isCompleted && !promptForLesson ? (
+                <div className="completion-banner">
+                  <div>
+                    <strong>Completed</strong> · This lesson is marked as done.
+                  </div>
+                  <button className="btn-secondary" onClick={() => setSelectedLesson(null)}>Back to Lessons</button>
+                </div>
+              ) : null}
+
+              {promptForLesson ? (
+                <div className="completion-banner">
+                  <div>
+                    <strong>Completed</strong> · Next: {promptForLesson.nextStep.label}
+                  </div>
+                  <button
+                    className="btn-primary"
+                    onClick={() => handleContinueFromCompletion(promptForLesson.nextStep)}
+                  >
+                    Continue →
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="btn-primary"
+                  onClick={() => handleLessonComplete(selectedCourse.id, selectedModule.moduleId, selectedLesson)}
+                >
+                  Mark as Completed
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -1035,19 +1096,25 @@ export default function EnhancedAcademy() {
         <div className="lessons-container">
           <h3>📖 Lessons</h3>
           <div className="lessons-list">
-            {selectedModule.lessons.map((lesson, idx) => (
-              <div key={lesson.id} className="lesson-item" onClick={() => setSelectedLesson(lesson)}>
+            {selectedModule.lessons.map((lesson, idx) => {
+              const lessonKey = getLessonKey(selectedCourse.id, selectedModule.moduleId, lesson.id);
+              const done = Boolean(completedLessons[lessonKey]);
+
+              return (
+                <div key={lesson.id} className={`lesson-item ${done ? 'completed' : ''}`} onClick={() => setSelectedLesson(lesson)}>
                 <div className="lesson-number">{idx + 1}</div>
                 <div className="lesson-details">
                   <h4>{lesson.title}</h4>
                   <div className="lesson-meta">
                     <span className="lesson-type">{lesson.type}</span>
                     <span>⏱️ {lesson.duration}</span>
+                    {done && <span className="lesson-status">✓ Completed</span>}
                   </div>
                 </div>
                 <div className="lesson-arrow">▶</div>
               </div>
-            ))}
+              );
+            })}
           </div>
 
           {selectedModule.quiz && (

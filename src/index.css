@@ -4059,6 +4059,11 @@ select:focus-visible {
   box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
 }
 
+.lesson-item.completed {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(236, 253, 245, 0.6);
+}
+
 .lesson-item:hover {
   border-color: #3b82f6;
   background: #f8fafc;
@@ -4093,6 +4098,11 @@ select:focus-visible {
     gap: 1rem;
     font-size: 0.8rem;
     color: #6b7280;
+  }
+
+  .lesson-status {
+    color: #059669;
+    font-weight: 600;
   }
 
   .lesson-type {
@@ -4954,6 +4964,26 @@ select:focus-visible {
     border-top: 2px solid #e5e7eb;
   }
 
+  .completion-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .completion-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
   /* Video Placeholder */
   .video-placeholder {
     background: #1f2937;
@@ -5049,6 +5079,21 @@ select:focus-visible {
 [data-theme='dark'] .case-meta,
 [data-theme='dark'] .technique .example {
   color: #cbd5e1;
+}
+
+[data-theme='dark'] .lesson-item.completed {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-theme='dark'] .lesson-status {
+  color: #6ee7b7;
+}
+
+[data-theme='dark'] .completion-banner {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #bbf7d0;
 }
 
 [data-theme='dark'] .info-card {
