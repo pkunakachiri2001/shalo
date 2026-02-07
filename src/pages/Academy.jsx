@@ -7,439 +7,400 @@ const LAST_POSITION_KEY = 'academy-last-position';
 const courses = [
   {
     id: 1,
-    title: 'Cyber Law Fundamentals',
+    title: 'Intellectual Property Fundamentals',
     level: 'Beginner',
     duration: '4 hours',
-    modules: 8,
-    rating: 4.8,
-    enrolled: 12450,
-    description: 'Master the basics of cyber law, understand legal frameworks, and learn how to protect your digital rights.',
+    modules: 2,
+    rating: 4.9,
+    enrolled: 14200,
+    description: 'Learn the core IP rights, why they matter, and how creators and businesses protect innovations, brands, and content.',
     instructor: 'Amicus IPR Academy',
-    image: '📚',
+    image: '📘',
     color: '#3b82f6',
     syllabus: [
       {
         moduleId: 1,
-        title: 'Module 1: Introduction to Cyber Law',
-        duration: '30 min',
+        title: 'Module 1: IP Rights Overview',
+        duration: '35 min',
         lessons: [
           {
             id: 1,
-            title: 'What is Cyber Law?',
+            title: 'What Is Intellectual Property?',
+            type: 'reading',
+            duration: '12 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Understanding Intellectual Property</h3>
+                <p class="lead">Intellectual property (IP) protects creations of the mind—innovations, artistic works, and distinctive brand identifiers.</p>
+
+                <div class="info-card">
+                  <h4>📌 Why IP Matters</h4>
+                  <ul>
+                    <li><strong>Incentive to Innovate:</strong> Rewards creators and investors</li>
+                    <li><strong>Brand Trust:</strong> Protects reputation and goodwill</li>
+                    <li><strong>Economic Value:</strong> IP assets can be licensed or sold</li>
+                    <li><strong>Consumer Protection:</strong> Reduces counterfeits and confusion</li>
+                  </ul>
+                </div>
+
+                <h4>🧭 Core IP Categories</h4>
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <span class="topic-icon">💡</span>
+                    <h5>Patents</h5>
+                    <p>Protect new, useful, and non-obvious inventions</p>
+                  </div>
+                  <div class="topic-card">
+                    <span class="topic-icon">™️</span>
+                    <h5>Trademarks</h5>
+                    <p>Protect brand names, logos, and distinctive signs</p>
+                  </div>
+                  <div class="topic-card">
+                    <span class="topic-icon">©️</span>
+                    <h5>Copyright</h5>
+                    <p>Protects original literary, artistic, and software works</p>
+                  </div>
+                  <div class="topic-card">
+                    <span class="topic-icon">🧪</span>
+                    <h5>Trade Secrets</h5>
+                    <p>Protects confidential business information</p>
+                  </div>
+                </div>
+
+                <div class="example-box">
+                  <h4>📎 Example</h4>
+                  <p><strong>Scenario:</strong> A startup builds a unique water‑filter design and a brand name for its product line.</p>
+                  <p><strong>IP Strategy:</strong></p>
+                  <ul>
+                    <li>File a patent for the filter mechanism</li>
+                    <li>Register a trademark for the brand name/logo</li>
+                    <li>Copyright the product manual and marketing visuals</li>
+                    <li>Keep supplier lists and formulas as trade secrets</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            id: 2,
+            title: 'Global IP Systems at a Glance',
             type: 'reading',
             duration: '10 min',
             content: `
               <div class="lesson-content">
-                <h3>Understanding Cyber Law</h3>
-                <p class="lead">Cyber law, also known as IT law or internet law, is the legal framework that governs digital activities, internet usage, and computer-related crimes.</p>
+                <h3>Key IP Institutions & Treaties</h3>
+                <p class="lead">IP rights are territorial, but global systems help streamline protection across borders.</p>
+
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>System</th>
+                      <th>Focus</th>
+                      <th>Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>WIPO</td>
+                      <td>Global IP coordination</td>
+                      <td>Treaties, standards, and global guidance</td>
+                    </tr>
+                    <tr>
+                      <td>PCT</td>
+                      <td>Patents</td>
+                      <td>Single international patent filing route</td>
+                    </tr>
+                    <tr>
+                      <td>Madrid System</td>
+                      <td>Trademarks</td>
+                      <td>International trademark registration</td>
+                    </tr>
+                    <tr>
+                      <td>Berne Convention</td>
+                      <td>Copyright</td>
+                      <td>Automatic protection across member states</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="key-takeaway">
+                  <h4>🎯 Key Takeaways</h4>
+                  <ol>
+                    <li>IP protection is territorial—register where you operate</li>
+                    <li>Treaties simplify filing but do not replace national rights</li>
+                    <li>Enforcement depends on local laws and courts</li>
+                  </ol>
+                </div>
+              </div>
+            `
+          }
+        ],
+        quiz: {
+          questions: [
+            {
+              question: 'Which IP right protects brand names and logos?',
+              options: ['Patent', 'Trademark', 'Copyright', 'Trade Secret'],
+              correct: 1,
+              explanation: 'Trademarks protect brand identifiers such as names, logos, and slogans.'
+            },
+            {
+              question: 'Which treaty system streamlines international trademark filing?',
+              options: ['Berne Convention', 'Madrid System', 'PCT', 'TRIPS'],
+              correct: 1,
+              explanation: 'The Madrid System provides an international route for trademark registration.'
+            },
+            {
+              question: 'IP rights are primarily:',
+              options: ['Global by default', 'Territorial by default', 'Unlimited in scope', 'Only for large companies'],
+              correct: 1,
+              explanation: 'IP rights are territorial and depend on each country’s law.'
+            }
+          ]
+        }
+      },
+      {
+        moduleId: 2,
+        title: 'Module 2: IP Ownership & Commercialization',
+        duration: '30 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Ownership, Assignment & Licensing',
+            type: 'reading',
+            duration: '15 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Who Owns IP?</h3>
+                <p class="lead">Ownership depends on creator status, employment contracts, and written assignments.</p>
 
                 <div class="info-card">
-                  <h4>🌐 Why Cyber Law Matters</h4>
+                  <h4>📑 Common Scenarios</h4>
                   <ul>
-                    <li><strong>Rapid Digitalization:</strong> 5 billion+ internet users worldwide</li>
-                    <li><strong>Rising Cybercrime:</strong> $10.5 trillion annual damage by 2025</li>
-                    <li><strong>Digital Economy:</strong> E-commerce, fintech, remote work explosion</li>
-                    <li><strong>Privacy Concerns:</strong> Data breaches affecting millions daily</li>
+                    <li><strong>Employee IP:</strong> Often owned by the employer if created within scope of work</li>
+                    <li><strong>Freelancers:</strong> Creator owns unless rights are assigned in writing</li>
+                    <li><strong>Collaborations:</strong> Joint ownership unless otherwise agreed</li>
                   </ul>
                 </div>
 
-                const courses = [
-                  {
-                    id: 1,
-                    title: 'Intellectual Property Fundamentals',
-                    level: 'Beginner',
-                    duration: '4 hours',
-                    modules: 2,
-                    rating: 4.9,
-                    enrolled: 14200,
-                    description: 'Learn the core IP rights, why they matter, and how creators and businesses protect innovations, brands, and content.',
-                    instructor: 'Amicus IPR Academy',
-                    image: '📘',
-                    color: '#3b82f6',
-                    syllabus: [
-                      {
-                        moduleId: 1,
-                        title: 'Module 1: IP Rights Overview',
-                        duration: '35 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'What Is Intellectual Property?',
-                            type: 'reading',
-                            duration: '12 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Understanding Intellectual Property</h3>
-                                <p class="lead">Intellectual property (IP) protects creations of the mind—innovations, artistic works, and distinctive brand identifiers.</p>
-
-                                <div class="info-card">
-                                  <h4>📌 Why IP Matters</h4>
-                                  <ul>
-                                    <li><strong>Incentive to Innovate:</strong> Rewards creators and investors</li>
-                                    <li><strong>Brand Trust:</strong> Protects reputation and goodwill</li>
-                                    <li><strong>Economic Value:</strong> IP assets can be licensed or sold</li>
-                                    <li><strong>Consumer Protection:</strong> Reduces counterfeits and confusion</li>
-                                  </ul>
-                                </div>
-
-                                <h4>🧭 Core IP Categories</h4>
-                                <div class="topic-grid">
-                                  <div class="topic-card">
-                                    <span class="topic-icon">💡</span>
-                                    <h5>Patents</h5>
-                                    <p>Protect new, useful, and non-obvious inventions</p>
-                                  </div>
-                                  <div class="topic-card">
-                                    <span class="topic-icon">™️</span>
-                                    <h5>Trademarks</h5>
-                                    <p>Protect brand names, logos, and distinctive signs</p>
-                                  </div>
-                                  <div class="topic-card">
-                                    <span class="topic-icon">©️</span>
-                                    <h5>Copyright</h5>
-                                    <p>Protects original literary, artistic, and software works</p>
-                                  </div>
-                                  <div class="topic-card">
-                                    <span class="topic-icon">🧪</span>
-                                    <h5>Trade Secrets</h5>
-                                    <p>Protects confidential business information</p>
-                                  </div>
-                                </div>
-
-                                <div class="example-box">
-                                  <h4>📎 Example</h4>
-                                  <p><strong>Scenario:</strong> A startup builds a unique water‑filter design and a brand name for its product line.</p>
-                                  <p><strong>IP Strategy:</strong></p>
-                                  <ul>
-                                    <li>File a patent for the filter mechanism</li>
-                                    <li>Register a trademark for the brand name/logo</li>
-                                    <li>Copyright the product manual and marketing visuals</li>
-                                    <li>Keep supplier lists and formulas as trade secrets</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            `
-                          },
-                          {
-                            id: 2,
-                            title: 'Global IP Systems at a Glance',
-                            type: 'reading',
-                            duration: '10 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Key IP Institutions & Treaties</h3>
-                                <p class="lead">IP rights are territorial, but global systems help streamline protection across borders.</p>
-
-                                <table class="data-table">
-                                  <thead>
-                                    <tr>
-                                      <th>System</th>
-                                      <th>Focus</th>
-                                      <th>Purpose</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>WIPO</td>
-                                      <td>Global IP coordination</td>
-                                      <td>Treaties, standards, and global guidance</td>
-                                    </tr>
-                                    <tr>
-                                      <td>PCT</td>
-                                      <td>Patents</td>
-                                      <td>Single international patent filing route</td>
-                                    </tr>
-                                    <tr>
-                                      <td>Madrid System</td>
-                                      <td>Trademarks</td>
-                                      <td>International trademark registration</td>
-                                    </tr>
-                                    <tr>
-                                      <td>Berne Convention</td>
-                                      <td>Copyright</td>
-                                      <td>Automatic protection across member states</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-
-                                <div class="key-takeaway">
-                                  <h4>🎯 Key Takeaways</h4>
-                                  <ol>
-                                    <li>IP protection is territorial—register where you operate</li>
-                                    <li>Treaties simplify filing but do not replace national rights</li>
-                                    <li>Enforcement depends on local laws and courts</li>
-                                  </ol>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ],
-                        quiz: {
-                          questions: [
-                            {
-                              question: 'Which IP right protects brand names and logos?',
-                              options: ['Patent', 'Trademark', 'Copyright', 'Trade Secret'],
-                              correct: 1,
-                              explanation: 'Trademarks protect brand identifiers such as names, logos, and slogans.'
-                            },
-                            {
-                              question: 'Which treaty system streamlines international trademark filing?',
-                              options: ['Berne Convention', 'Madrid System', 'PCT', 'TRIPS'],
-                              correct: 1,
-                              explanation: 'The Madrid System provides an international route for trademark registration.'
-                            },
-                            {
-                              question: 'IP rights are primarily:',
-                              options: ['Global by default', 'Territorial by default', 'Unlimited in scope', 'Only for large companies'],
-                              correct: 1,
-                              explanation: 'IP rights are territorial and depend on each country’s law.'
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        moduleId: 2,
-                        title: 'Module 2: IP Ownership & Commercialization',
-                        duration: '30 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Ownership, Assignment & Licensing',
-                            type: 'reading',
-                            duration: '15 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Who Owns IP?</h3>
-                                <p class="lead">Ownership depends on creator status, employment contracts, and written assignments.</p>
-
-                                <div class="info-card">
-                                  <h4>📑 Common Scenarios</h4>
-                                  <ul>
-                                    <li><strong>Employee IP:</strong> Often owned by the employer if created within scope of work</li>
-                                    <li><strong>Freelancers:</strong> Creator owns unless rights are assigned in writing</li>
-                                    <li><strong>Collaborations:</strong> Joint ownership unless otherwise agreed</li>
-                                  </ul>
-                                </div>
-
-                                <div class="topic-grid">
-                                  <div class="topic-card">
-                                    <span class="topic-icon">📝</span>
-                                    <h5>Assignments</h5>
-                                    <p>Transfer ownership of IP rights</p>
-                                  </div>
-                                  <div class="topic-card">
-                                    <span class="topic-icon">🤝</span>
-                                    <h5>Licensing</h5>
-                                    <p>Grant permission to use IP while retaining ownership</p>
-                                  </div>
-                                  <div class="topic-card">
-                                    <span class="topic-icon">💼</span>
-                                    <h5>Royalty Models</h5>
-                                    <p>Revenue sharing, fixed fees, or usage‑based royalties</p>
-                                  </div>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    id: 2,
-                    title: 'Patents & Innovation Protection',
-                    level: 'Intermediate',
-                    duration: '5 hours',
-                    modules: 2,
-                    rating: 4.8,
-                    enrolled: 7800,
-                    description: 'From patentability to enforcement—learn how to protect inventions, draft claims, and build filing strategy.',
-                    instructor: 'Amicus IPR Academy',
-                    image: '🔬',
-                    color: '#8b5cf6',
-                    syllabus: [
-                      {
-                        moduleId: 1,
-                        title: 'Module 1: Patentability & Prior Art',
-                        duration: '40 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Patentability Criteria',
-                            type: 'reading',
-                            duration: '15 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>What Can Be Patented?</h3>
-                                <p class="lead">Most jurisdictions require novelty, inventive step, and industrial applicability.</p>
-                                <ul>
-                                  <li><strong>Novelty:</strong> Not publicly disclosed anywhere in the world</li>
-                                  <li><strong>Inventive Step:</strong> Not obvious to a skilled person</li>
-                                  <li><strong>Utility:</strong> Practical, industrial application</li>
-                                </ul>
-                                <div class="example-box">
-                                  <h4>🧠 Prior Art Search</h4>
-                                  <p>Search existing patents, publications, and products before filing to assess novelty and reduce risk.</p>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ]
-                      },
-                      {
-                        moduleId: 2,
-                        title: 'Module 2: Filing Strategy & Enforcement',
-                        duration: '45 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Claims, Scope & Enforcement',
-                            type: 'reading',
-                            duration: '15 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Drafting Strong Patent Claims</h3>
-                                <p class="lead">Claims define the legal boundary of protection and are central in enforcement.</p>
-                                <div class="info-card">
-                                  <h4>✅ Best Practices</h4>
-                                  <ul>
-                                    <li>Define core inventive concept clearly</li>
-                                    <li>Include dependent claims to cover variants</li>
-                                    <li>Align claim scope with business strategy</li>
-                                  </ul>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    id: 3,
-                    title: 'Trademarks & Brand Protection',
-                    level: 'Intermediate',
-                    duration: '4 hours',
-                    modules: 2,
-                    rating: 4.7,
-                    enrolled: 9100,
-                    description: 'Protect brand identity, conduct clearance searches, and enforce rights against confusion and counterfeits.',
-                    instructor: 'Amicus IPR Academy',
-                    image: '™️',
-                    color: '#10b981',
-                    syllabus: [
-                      {
-                        moduleId: 1,
-                        title: 'Module 1: Trademark Basics',
-                        duration: '35 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Distinctiveness & Clearance',
-                            type: 'reading',
-                            duration: '12 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Choosing a Strong Mark</h3>
-                                <p class="lead">Fanciful and arbitrary marks are strongest; descriptive marks are hardest to protect.</p>
-                                <div class="example-box">
-                                  <h4>🔍 Clearance Search</h4>
-                                  <p>Search registries, marketplaces, and domain names before adopting a brand.</p>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ]
-                      },
-                      {
-                        moduleId: 2,
-                        title: 'Module 2: Enforcement & Online Protection',
-                        duration: '40 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Opposition, Infringement & Takedowns',
-                            type: 'reading',
-                            duration: '14 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Defending Your Brand</h3>
-                                <p class="lead">Use opposition proceedings, infringement claims, and platform takedowns to curb misuse.</p>
-                                <ul>
-                                  <li>Monitor for confusingly similar marks</li>
-                                  <li>Document evidence of use and reputation</li>
-                                  <li>Leverage marketplace and social platform tools</li>
-                                </ul>
-                              </div>
-                            `
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    id: 4,
-                    title: 'Copyright & Digital Rights',
-                    level: 'Advanced',
-                    duration: '4 hours',
-                    modules: 2,
-                    rating: 4.6,
-                    enrolled: 6200,
-                    description: 'Understand copyright scope, fair use exceptions, licensing, and enforcement in digital platforms.',
-                    instructor: 'Amicus IPR Academy',
-                    image: '🎨',
-                    color: '#f59e0b',
-                    syllabus: [
-                      {
-                        moduleId: 1,
-                        title: 'Module 1: Copyright Basics',
-                        duration: '30 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Scope, Duration & Exceptions',
-                            type: 'reading',
-                            duration: '12 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>What Copyright Protects</h3>
-                                <p class="lead">Original expression in literary, artistic, musical, and software works.</p>
-                                <div class="info-card">
-                                  <h4>⚖️ Exceptions</h4>
-                                  <p>Fair use/fair dealing allows limited use for criticism, education, and news reporting.</p>
-                                </div>
-                              </div>
-                            `
-                          }
-                        ]
-                      },
-                      {
-                        moduleId: 2,
-                        title: 'Module 2: Licensing & Enforcement',
-                        duration: '35 min',
-                        lessons: [
-                          {
-                            id: 1,
-                            title: 'Takedowns, Licensing & Royalties',
-                            type: 'reading',
-                            duration: '15 min',
-                            content: `
-                              <div class="lesson-content">
-                                <h3>Monetizing Creative Works</h3>
-                                <p class="lead">Use licenses to enable lawful use and enforce rights on platforms when infringed.</p>
-                                <ul>
-                                  <li>Exclusive vs non‑exclusive licenses</li>
-                                  <li>Collecting royalties through CMOs</li>
-                                  <li>Notice‑and‑takedown workflows</li>
-                                </ul>
-                              </div>
-                            `
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ];
+                <div class="topic-grid">
+                  <div class="topic-card">
+                    <span class="topic-icon">📝</span>
+                    <h5>Assignments</h5>
+                    <p>Transfer ownership of IP rights</p>
+                  </div>
+                  <div class="topic-card">
+                    <span class="topic-icon">🤝</span>
+                    <h5>Licensing</h5>
+                    <p>Grant permission to use IP while retaining ownership</p>
+                  </div>
+                  <div class="topic-card">
+                    <span class="topic-icon">💼</span>
+                    <h5>Royalty Models</h5>
+                    <p>Revenue sharing, fixed fees, or usage‑based royalties</p>
+                  </div>
+                </div>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Patents & Innovation Protection',
+    level: 'Intermediate',
+    duration: '5 hours',
+    modules: 2,
+    rating: 4.8,
+    enrolled: 7800,
+    description: 'From patentability to enforcement—learn how to protect inventions, draft claims, and build filing strategy.',
+    instructor: 'Amicus IPR Academy',
+    image: '🔬',
+    color: '#8b5cf6',
+    syllabus: [
+      {
+        moduleId: 1,
+        title: 'Module 1: Patentability & Prior Art',
+        duration: '40 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Patentability Criteria',
+            type: 'reading',
+            duration: '15 min',
+            content: `
+              <div class="lesson-content">
+                <h3>What Can Be Patented?</h3>
+                <p class="lead">Most jurisdictions require novelty, inventive step, and industrial applicability.</p>
+                <ul>
+                  <li><strong>Novelty:</strong> Not publicly disclosed anywhere in the world</li>
+                  <li><strong>Inventive Step:</strong> Not obvious to a skilled person</li>
+                  <li><strong>Utility:</strong> Practical, industrial application</li>
+                </ul>
+                <div class="example-box">
+                  <h4>🧠 Prior Art Search</h4>
+                  <p>Search existing patents, publications, and products before filing to assess novelty and reduce risk.</p>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        moduleId: 2,
+        title: 'Module 2: Filing Strategy & Enforcement',
+        duration: '45 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Claims, Scope & Enforcement',
+            type: 'reading',
+            duration: '15 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Drafting Strong Patent Claims</h3>
+                <p class="lead">Claims define the legal boundary of protection and are central in enforcement.</p>
+                <div class="info-card">
+                  <h4>✅ Best Practices</h4>
+                  <ul>
+                    <li>Define core inventive concept clearly</li>
+                    <li>Include dependent claims to cover variants</li>
+                    <li>Align claim scope with business strategy</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Trademarks & Brand Protection',
+    level: 'Intermediate',
+    duration: '4 hours',
+    modules: 2,
+    rating: 4.7,
+    enrolled: 9100,
+    description: 'Protect brand identity, conduct clearance searches, and enforce rights against confusion and counterfeits.',
+    instructor: 'Amicus IPR Academy',
+    image: '™️',
+    color: '#10b981',
+    syllabus: [
+      {
+        moduleId: 1,
+        title: 'Module 1: Trademark Basics',
+        duration: '35 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Distinctiveness & Clearance',
+            type: 'reading',
+            duration: '12 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Choosing a Strong Mark</h3>
+                <p class="lead">Fanciful and arbitrary marks are strongest; descriptive marks are hardest to protect.</p>
+                <div class="example-box">
+                  <h4>🔍 Clearance Search</h4>
+                  <p>Search registries, marketplaces, and domain names before adopting a brand.</p>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        moduleId: 2,
+        title: 'Module 2: Enforcement & Online Protection',
+        duration: '40 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Opposition, Infringement & Takedowns',
+            type: 'reading',
+            duration: '14 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Defending Your Brand</h3>
+                <p class="lead">Use opposition proceedings, infringement claims, and platform takedowns to curb misuse.</p>
+                <ul>
+                  <li>Monitor for confusingly similar marks</li>
+                  <li>Document evidence of use and reputation</li>
+                  <li>Leverage marketplace and social platform tools</li>
+                </ul>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Copyright & Digital Rights',
+    level: 'Advanced',
+    duration: '4 hours',
+    modules: 2,
+    rating: 4.6,
+    enrolled: 6200,
+    description: 'Understand copyright scope, fair use exceptions, licensing, and enforcement in digital platforms.',
+    instructor: 'Amicus IPR Academy',
+    image: '🎨',
+    color: '#f59e0b',
+    syllabus: [
+      {
+        moduleId: 1,
+        title: 'Module 1: Copyright Basics',
+        duration: '30 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Scope, Duration & Exceptions',
+            type: 'reading',
+            duration: '12 min',
+            content: `
+              <div class="lesson-content">
+                <h3>What Copyright Protects</h3>
+                <p class="lead">Original expression in literary, artistic, musical, and software works.</p>
+                <div class="info-card">
+                  <h4>⚖️ Exceptions</h4>
+                  <p>Fair use/fair dealing allows limited use for criticism, education, and news reporting.</p>
+                </div>
+              </div>
+            `
+          }
+        ]
+      },
+      {
+        moduleId: 2,
+        title: 'Module 2: Licensing & Enforcement',
+        duration: '35 min',
+        lessons: [
+          {
+            id: 1,
+            title: 'Takedowns, Licensing & Royalties',
+            type: 'reading',
+            duration: '15 min',
+            content: `
+              <div class="lesson-content">
+                <h3>Monetizing Creative Works</h3>
+                <p class="lead">Use licenses to enable lawful use and enforce rights on platforms when infringed.</p>
+                <ul>
+                  <li>Exclusive vs non‑exclusive licenses</li>
+                  <li>Collecting royalties through CMOs</li>
+                  <li>Notice‑and‑takedown workflows</li>
+                </ul>
+              </div>
+            `
+          }
+        ]
+      }
+    ]
+  }
+];
                     <p>Malicious software that steals data or locks files for ransom</p>
                     <div class="example">
                       <strong>Example:</strong> WannaCry ransomware attack (2017) - 200,000+ computers in 150 countries
