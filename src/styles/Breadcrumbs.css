@@ -1,7 +1,7 @@
 /* Breadcrumbs Styles */
 .breadcrumbs-nav {
-  background: rgba(30, 64, 175, 0.04);
-  border-bottom: 1.5px solid rgba(30, 64, 175, 0.12);
+  background: var(--surface-3);
+  border-bottom: 1.5px solid var(--border-soft);
   padding: 0.8rem 0;
   margin-bottom: 1rem;
   backdrop-filter: blur(10px);
@@ -24,25 +24,25 @@
 }
 
 .breadcrumb-link {
-  color: #1e40af;
+  color: var(--primary);
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.2s ease;
 }
 
 .breadcrumb-link:hover {
-  color: #2563eb;
+  color: var(--secondary);
   text-decoration: underline;
 }
 
 .breadcrumb-current {
-  color: #475569;
+  color: var(--text-2);
   font-size: 0.9rem;
   font-weight: 600;
 }
 
 .breadcrumb-separator {
-  color: #64748b;
+  color: var(--text-3);
   margin: 0 0.3rem;
 }
 

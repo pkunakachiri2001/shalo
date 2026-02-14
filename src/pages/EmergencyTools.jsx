@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { useToast } from '../context/ToastContext';
 
 export default function EmergencyTools() {
+  const toast = useToast();
   const [activeTab, setActiveTab] = useState('reporter');
   const [selectedCountry, setSelectedCountry] = useState('india');
   const [reportData, setReportData] = useState({
@@ -38,7 +40,7 @@ export default function EmergencyTools() {
       setReportData({ type: '', description: '', evidence: '', urgency: 'medium' });
     }, 3000);
     
-    alert('✓ Report prepared! Use the country guidance below to submit officially. Save this information for reference.');
+    toast.success('Report prepared. Use the country guidance below to submit officially.');
   };
 
   const countryGuides = [
@@ -386,7 +388,7 @@ Sincerely,
 
             <form onSubmit={handleReportSubmit} className="report-form" noValidate>
               {submitted && (
-                <div style={{ background: '#d1fae5', color: '#065f46', padding: '1rem', borderRadius: '0.5rem', marginBottom: '1.5rem', border: '1px solid #6ee7b7' }}>
+                <div className="form-success">
                   ✓ Report prepared successfully! Use the country guidance above to file officially.
                 </div>
               )}
@@ -451,7 +453,7 @@ Sincerely,
               </div>
 
               <div className="form-group">
-                <label htmlFor="description">Description * <span style={{ color: '#64748b', fontSize: '0.9rem' }}>(min 20 chars)</span></label>
+                <label htmlFor="description">Description * <span className="form-hint">(min 20 chars)</span></label>
                 <textarea
                   id="description"
                   rows="6"
@@ -528,7 +530,7 @@ Sincerely,
                     className="btn-secondary"
                     onClick={() => {
                       navigator.clipboard.writeText(template.template);
-                      alert('Template copied to clipboard!');
+                      toast.success('Template copied to clipboard.');
                     }}
                   >
                     📋 Copy Template

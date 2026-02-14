@@ -18,8 +18,8 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="dashboard-page">
-      <div className="dashboard-header">
+    <div className="page dashboard-page">
+      <div className="page-header dashboard-header">
         <h1>📊 Your Learning Dashboard</h1>
         <p>Track your progress towards becoming an IPR expert</p>
       </div>

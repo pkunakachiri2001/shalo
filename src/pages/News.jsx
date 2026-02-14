@@ -75,25 +75,16 @@ export default function News() {
         <p>Stay informed about patents, trademarks, copyrights, enforcement, and policy changes</p>
         
         {/* Refresh and Status Info */}
-        <div className="news-controls" style={{ marginTop: '15px', display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+        <div className="news-controls">
           <button 
             onClick={handleRefresh} 
             disabled={refreshing || loading}
-            style={{
-              padding: '8px 16px',
-              backgroundColor: '#2563eb',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: refreshing || loading ? 'not-allowed' : 'pointer',
-              fontSize: '14px',
-              opacity: refreshing || loading ? 0.6 : 1
-            }}
+            className="news-refresh-btn"
           >
             {refreshing ? '🔄 Refreshing...' : '🔄 Refresh News'}
           </button>
           
-          <span style={{ fontSize: '12px', color: '#666' }}>
+          <span className="news-status">
             {loading ? '⏳ Loading news...' : `✅ ${newsData.length} articles loaded`}
           </span>
         </div>
@@ -101,28 +92,16 @@ export default function News() {
 
       {/* Error Message */}
       {error && (
-        <div style={{
-          backgroundColor: '#fee2e2',
-          borderLeft: '4px solid #dc2626',
-          padding: '12px',
-          margin: '20px',
-          borderRadius: '4px',
-          color: '#991b1b'
-        }}>
+        <div className="news-error">
           <strong>⚠️ Error:</strong> {error}
         </div>
       )}
 
       {/* Loading State - Skeleton Loaders */}
       {loading && (
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '20px',
-          padding: '20px'
-        }}>
+        <div className="news-skeleton-grid">
           {[1, 2, 3, 4, 5, 6].map(i => (
-            <div key={i} className="news-card" style={{ padding: '20px' }}>
+            <div key={i} className="news-card news-skeleton-card">
               <div className="skeleton skeleton-text" style={{ width: '60%', marginBottom: '12px' }} />
               <div className="skeleton skeleton-title" style={{ marginBottom: '12px' }} />
               <div className="skeleton skeleton-text" style={{ width: '80%', marginBottom: '8px' }} />
@@ -136,28 +115,12 @@ export default function News() {
 
       {/* Category Filter */}
       {!loading && newsData.length > 0 && (
-        <div className="category-filter" style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: '8px',
-          padding: '20px',
-          borderBottom: '1px solid #e5e7eb'
-        }}>
+        <div className="category-filter">
           {categories.map(category => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              style={{
-                padding: '6px 14px',
-                backgroundColor: selectedCategory === category ? '#2563eb' : '#f3f4f6',
-                color: selectedCategory === category ? 'white' : '#374151',
-                border: 'none',
-                borderRadius: '20px',
-                cursor: 'pointer',
-                fontSize: '13px',
-                fontWeight: selectedCategory === category ? '600' : '500',
-                transition: 'all 0.2s'
-              }}
+              className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
             >
               {category === 'all' ? '📰 All News' : category}
             </button>
@@ -209,7 +172,7 @@ export default function News() {
 
               {/* Source attribution if available */}
               {news.source && (
-                <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '10px', borderTop: '1px solid #e5e7eb', paddingTop: '10px' }}>
+                <div className="news-source">
                   📰 Source: {news.source}
                 </div>
               )}
@@ -220,7 +183,7 @@ export default function News() {
                   href={news.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  style={{ color: '#2563eb', textDecoration: 'none', fontSize: '13px', marginTop: '10px', display: 'block' }}
+                  className="news-readmore"
                 >
                   Read full article →
                 </a>
@@ -229,23 +192,11 @@ export default function News() {
           );
           })
         ) : !loading && (
-          <div style={{
-            gridColumn: '1 / -1',
-            textAlign: 'center',
-            padding: '40px',
-            color: '#6b7280'
-          }}>
-            <p style={{ fontSize: '16px', marginBottom: '10px' }}>📭 No news articles found in this category</p>
+          <div className="news-empty">
+            <p className="news-empty-title">📭 No news articles found in this category</p>
             <button 
               onClick={() => setSelectedCategory('all')}
-              style={{
-                padding: '8px 16px',
-                backgroundColor: '#2563eb',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: 'pointer'
-              }}
+              className="news-empty-btn"
             >
               View All News
             </button>

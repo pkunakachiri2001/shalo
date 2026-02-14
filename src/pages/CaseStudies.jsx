@@ -95,8 +95,8 @@ export default function CaseStudies() {
   };
 
   return (
-    <div className="case-studies-page">
-      <div className="case-studies-header">
+    <div className="page case-studies-page">
+      <div className="page-header case-studies-header">
         <h1>📋 Real IPR Case Studies</h1>
         <p>Learn from landmark IP disputes and enforcement outcomes</p>
       </div>

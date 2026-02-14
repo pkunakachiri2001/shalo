@@ -53,7 +53,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="page">
+    <div className="page home-page">
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">

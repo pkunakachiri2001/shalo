@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useToast } from '../context/ToastContext';
 
 const iprDatabase = [
   {
@@ -92,13 +93,14 @@ const iprDatabase = [
 ];
 
 export default function CrimeIdentifier() {
+  const toast = useToast();
   const [situation, setSituation] = useState('');
   const [result, setResult] = useState(null);
   const [analyzing, setAnalyzing] = useState(false);
 
   const analyzeSituation = () => {
     if (!situation.trim()) {
-      alert('Please describe your situation first.');
+      toast.warning('Please describe your situation first.');
       return;
     }
 

@@ -13,14 +13,14 @@
 
 .timeline-header h1 {
   font-size: 2.6rem;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;  background-clip: text;  -webkit-text-fill-color: transparent;
   margin: 0 0 0.5rem 0;
   font-weight: 800;
 }
 
 .timeline-header p {
-  color: #64748b;
+  color: var(--text-3);
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -36,7 +36,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #1e40af, #2563eb);
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
   transform: translateX(-50%);
 }
 
@@ -80,8 +80,8 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #1e40af;
-  border: 3px solid white;
+  background: var(--primary);
+  border: 3px solid var(--surface-1);
   border-radius: 50%;
   top: 15px;
   left: 50%;
@@ -96,9 +96,9 @@
 }
 
 .timeline-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.95) 100%);
+  background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%);
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(30, 64, 175, 0.15);
+  border: 1.5px solid var(--border-soft);
   border-radius: 1.5rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -120,21 +120,21 @@
 }
 
 .event-year {
-  color: #1e40af;
+  color: var(--primary);
   margin: 0.5rem 0;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .event-title {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin: 0.5rem 0;
   font-size: 1.1rem;
   font-weight: 700;
 }
 
 .event-description {
-  color: #475569;
+  color: var(--text-2);
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -144,14 +144,14 @@
   text-align: center;
   margin-top: 3rem;
   padding: 2rem;
-  background: rgba(30, 64, 175, 0.04);
+  background: var(--surface-3);
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(30, 64, 175, 0.12);
+  border: 1.5px solid var(--border-soft);
   border-radius: 1.5rem;
 }
 
 .timeline-footer p {
-  color: #64748b;
+  color: var(--text-3);
   margin: 0;
   font-size: 0.95rem;
 }

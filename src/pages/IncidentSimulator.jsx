@@ -134,8 +134,8 @@ export default function IncidentSimulator() {
 
   if (selectedIncident === null) {
     return (
-      <div className="simulator-container">
-        <div className="simulator-header">
+      <div className="page simulator-container">
+        <div className="page-header simulator-header">
           <h1>🎯 IPR Response Simulator</h1>
           <p>Practice decision-making for common IP infringement scenarios</p>
         </div>
@@ -181,7 +181,7 @@ export default function IncidentSimulator() {
   const choice = selectedChoice !== null ? incident.choices[selectedChoice] : null;
 
   return (
-    <div className="simulator-container">
+    <div className="page simulator-container">
       <button className="back-btn-sim" onClick={resetSimulator}>← Back to Scenarios</button>
 
       <div className="scenario-view">

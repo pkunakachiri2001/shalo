@@ -65,8 +65,8 @@ const TIMELINE_EVENTS = [
 
 export default function Timeline() {
   return (
-    <div className="timeline-page">
-      <div className="timeline-header">
+    <div className="page timeline-page">
+      <div className="page-header timeline-header">
         <h1>📅 Intellectual Property Timeline</h1>
         <p>Key milestones in global IP protection and enforcement</p>
       </div>

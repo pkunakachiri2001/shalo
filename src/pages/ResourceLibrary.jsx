@@ -23,6 +23,12 @@ const RESOURCES = [
         description: 'EU trademarks and design registrations',
         link: 'https://euipo.europa.eu/',
         tags: ['EU', 'Trademarks', 'Designs']
+      },
+      {
+        title: 'ARIPO (African Regional IP Organization)',
+        description: 'Regional IP filings and resources for member states',
+        link: 'https://www.aripo.org/',
+        tags: ['Africa', 'Regional', 'IPR']
       }
     ]
   },
@@ -48,6 +54,12 @@ const RESOURCES = [
         description: 'Copyright registration and guidance',
         link: 'https://copyright.gov.in/',
         tags: ['India', 'Copyright']
+      },
+      {
+        title: 'CIPO (Zimbabwe) - Companies and Intellectual Property Office',
+        description: 'Zimbabwe patents, trademarks, and IP services',
+        link: 'https://www.cipo.co.zw/',
+        tags: ['Zimbabwe', 'IPR']
       }
     ]
   },
@@ -105,8 +117,8 @@ const RESOURCES = [
 
 export default function ResourceLibrary() {
   return (
-    <div className="resource-library-page">
-      <div className="library-header">
+    <div className="page resource-library-page">
+      <div className="page-header library-header">
         <h1>📚 IPR Resource Library</h1>
         <p>Curated collection of IP offices, dispute resolution, and learning resources</p>
       </div>

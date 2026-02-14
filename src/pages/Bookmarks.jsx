@@ -15,8 +15,8 @@ export default function Bookmarks() {
   }, {});
 
   return (
-    <div className="bookmarks-page">
-      <div className="bookmarks-header">
+    <div className="page bookmarks-page">
+      <div className="page-header bookmarks-header">
         <h1>⭐ My Bookmarks</h1>
         <p>Your saved lessons, resources, and important content</p>
       </div>
@@ -26,18 +26,7 @@ export default function Bookmarks() {
           <div className="empty-state-icon">📋</div>
           <h3>No Bookmarks Yet</h3>
           <p>Start bookmarking your favorite lessons, resources, and important content to access them quickly!</p>
-          <a href="/academy" className="browse-btn" style={{
-            display: 'inline-block',
-            marginTop: '1rem',
-            padding: '0.75rem 1.5rem',
-            background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
-            color: 'white',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            fontWeight: '600',
-            boxShadow: '0 4px 12px rgba(30, 64, 175, 0.3)',
-            transition: 'all 0.3s ease'
-          }}>
+          <a href="/academy" className="browse-btn">
             📚 Browse Academy
           </a>
         </div>

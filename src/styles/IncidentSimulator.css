@@ -14,7 +14,7 @@
 
 .simulator-header h1 {
   font-size: 2.8rem;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -24,7 +24,7 @@
 }
 
 .simulator-header p {
-  color: #64748b;
+  color: var(--text-3);
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -45,9 +45,9 @@
 }
 
 .stat-item {
-  background: rgba(30, 64, 175, 0.05);
+  background: var(--surface-3);
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(30, 64, 175, 0.15);
+  border: 1.5px solid var(--border-soft);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -60,9 +60,9 @@
 }
 
 .stat-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.95) 100%);
+  background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%);
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(30, 64, 175, 0.15);
+  border: 1.5px solid var(--border-soft);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
@@ -78,7 +78,7 @@
 
 .stat-label {
   display: block;
-  color: #64748b;
+  color: var(--text-3);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -90,7 +90,7 @@
   display: block;
   font-size: 2rem;
   font-weight: bold;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -100,7 +100,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,9 +115,9 @@
 }
 
 .incident-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 247, 250, 0.95) 100%);
+  background: linear-gradient(135deg, var(--surface-1) 0%, var(--surface-2) 100%);
   backdrop-filter: blur(10px);
-  border: 1.5px solid rgba(30, 64, 175, 0.15);
+  border: 1.5px solid var(--border-soft);
   border-radius: 1.5rem;
   padding: 2rem;
   text-align: center;
@@ -139,26 +139,26 @@
 }
 
 .incident-card h3 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
 .incident-card p {
-  color: #475569;
+  color: var(--text-2);
   font-size: 0.9rem;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
 
 .incident-modal-details {
-  color: #475569;
+  color: var(--text-2);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
 .incident-modal-details h3 {
-  color: #1e3a8a;
+  color: var(--text-1);
   font-size: 1.1rem;
   margin: 1.5rem 0 0.8rem 0;
   font-weight: 600;
@@ -175,8 +175,8 @@
 }
 
 .choice-item {
-  background: rgba(30, 64, 175, 0.05);
-  border: 1.5px solid rgba(30, 64, 175, 0.15);
+  background: var(--surface-3);
+  border: 1.5px solid var(--border-soft);
   border-left: 4px solid rgba(30, 64, 175, 0.3);
   border-radius: 0.8rem;
   padding: 1rem;
@@ -195,7 +195,7 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border-radius: 50%;
   font-weight: 700;
@@ -208,27 +208,27 @@
 
 .choice-text-modal {
   margin: 0;
-  color: #1e3a8a;
+  color: var(--text-1);
   font-weight: 600;
 }
 
 .consequence-info {
   margin: 0.5rem 0;
-  color: #475569;
+  color: var(--text-2);
   font-size: 0.9rem;
   font-style: italic;
 }
 
 .impact-info {
   margin: 0.5rem 0 0 0;
-  color: #64748b;
+  color: var(--text-3);
   font-size: 0.9rem;
 }
 
 .detail-section {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .detail-section:last-child {
@@ -252,9 +252,9 @@
 }
 
 .back-btn-sim {
-  background: rgba(30, 64, 175, 0.08);
-  border: 1px solid rgba(30, 64, 175, 0.2);
-  color: #1e40af;
+  background: var(--surface-3);
+  border: 1px solid var(--border-soft);
+  color: var(--primary);
   padding: 0.7rem 1.5rem;
   border-radius: 0.7rem;
   cursor: pointer;
@@ -276,9 +276,9 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background: rgba(99, 102, 241, 0.05);
+  background: var(--surface-3);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border-soft);
   border-radius: 1.5rem;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -290,15 +290,15 @@
 }
 
 .scenario-header h1 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin: 0;
 }
 
 .scenario-panel,
 .choices-panel {
-  background: rgba(99, 102, 241, 0.05);
+  background: var(--surface-3);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--border-soft);
   border-radius: 1.5rem;
   padding: 2rem;
   margin-bottom: 2rem;
@@ -306,12 +306,12 @@
 
 .scenario-panel h2,
 .choices-panel h2 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin-bottom: 1.5rem;
 }
 
 .scenario-text {
-  color: #475569;
+  color: var(--text-2);
   font-size: 1.1rem;
   line-height: 1.8;
   margin: 0;
@@ -324,9 +324,9 @@
 }
 
 .choice-btn {
-  background: white;
-  border: 1px solid rgba(30, 64, 175, 0.2);
-  color: #475569;
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  color: var(--text-2);
   padding: 1.2rem;
   border-radius: 1rem;
   text-align: left;
@@ -339,9 +339,9 @@
 }
 
 .choice-btn:hover:not(:disabled) {
-  background: rgba(30, 64, 175, 0.05);
+  background: var(--surface-3);
   border-color: rgba(30, 64, 175, 0.4);
-  color: #1e3a8a;
+  color: var(--text-1);
   transform: translateX(5px);
 }
 
@@ -350,9 +350,9 @@
 }
 
 .choice-btn.selected {
-  background: rgba(30, 64, 175, 0.08);
+  background: rgba(30, 64, 175, 0.12);
   border-color: rgba(30, 64, 175, 0.5);
-  color: #1e3a8a;
+  color: var(--text-1);
 }
 
 .choice-letter {
@@ -361,7 +361,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #1e40af;
+  background: var(--primary);
   color: white;
   border-radius: 50%;
   font-weight: bold;
@@ -373,9 +373,9 @@
 }
 
 .consequence-panel {
-  background: rgba(99, 102, 241, 0.05);
+  background: var(--surface-3);
   backdrop-filter: blur(20px);
-  border: 2px solid rgba(99, 102, 241, 0.2);
+  border: 2px solid var(--border-soft);
   border-radius: 1.5rem;
   padding: 2rem;
   animation: slideUp 0.4s ease;
@@ -392,13 +392,13 @@
 }
 
 .consequence-panel h3 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
 
 .consequence-text {
-  color: #475569;
+  color: var(--text-2);
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
@@ -413,43 +413,43 @@
 }
 
 .impact-section {
-  background: rgba(30, 64, 175, 0.05);
-  border-left: 3px solid #1e40af;
+  background: var(--surface-3);
+  border-left: 3px solid var(--primary);
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .impact-section h4 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin: 0 0 0.5rem 0;
 }
 
 .impact-section p {
-  color: #475569;
+  color: var(--text-2);
   margin: 0;
 }
 
 .legal-info {
-  background: rgba(30, 64, 175, 0.08);
-  border-left: 3px solid #1e40af;
+  background: var(--surface-4);
+  border-left: 3px solid var(--primary);
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .legal-info h4 {
-  color: #1e3a8a;
+  color: var(--text-1);
   margin: 0 0 0.5rem 0;
 }
 
 .legal-info p {
-  color: #475569;
+  color: var(--text-2);
   margin: 0;
 }
 
 .next-btn {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border: none;
   padding: 1rem 2rem;
