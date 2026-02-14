@@ -36,8 +36,8 @@ Amicus IPR is a comprehensive intellectual property rights platform that helps c
    - Evidence collection guidance
 
 4. **🚨 Report & Enforcement Tools** - Country-specific guidance
-   - Multi-country support (India, US, UK, EU, Canada, Australia, etc.)
-   - Direct links to IP offices (USPTO, IP India, EUIPO, etc.)
+   - Multi-country support (India, US, UK, EU, Canada, Australia, Zimbabwe, etc.)
+   - Direct links to IP offices (USPTO, IP India, EUIPO, ARIPO, etc.)
    - Enforcement routes and procedures
    - Report builder with templates
    - Evidence documentation checklists
@@ -207,8 +207,8 @@ SHALO/
 
 ### Report & Enforcement
 - **Country-specific guidance** for:
-  - India, US, UK, EU, Canada, Australia, Singapore, Japan
-- **Direct links** to IP offices and portals
+  - India, US, UK, EU, Canada, Australia, Zimbabwe
+- **Direct links** to IP offices and portals (including ARIPO for regional filings)
 - **Report builder** with structured forms
 - **Evidence documentation** checklists
 - **Filing procedures** for each country

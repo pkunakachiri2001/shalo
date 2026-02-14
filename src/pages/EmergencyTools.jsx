@@ -151,6 +151,27 @@ export default function EmergencyTools() {
         'Copyright Act 1968',
         'Designs Act 2003'
       ]
+    },
+    {
+      id: 'zimbabwe',
+      name: 'Zimbabwe',
+      portals: [
+        { label: 'Companies & IP Office (CIPO)', url: 'https://www.justice.gov.zw/' },
+        { label: 'ARIPO (Regional)', url: 'https://www.aripo.org/' }
+      ],
+      reportTo: [
+        'Companies and Intellectual Property Office (CIPO) for registrations',
+        'ARIPO for regional patent/design filings',
+        'Commercial courts for IP infringement claims',
+        'Zimbabwe Revenue Authority (ZIMRA) for border enforcement'
+      ],
+      laws: [
+        'Patents Act [Chapter 26:03]',
+        'Trade Marks Act [Chapter 26:04]',
+        'Copyright and Neighbouring Rights Act [Chapter 26:05]',
+        'Industrial Designs Act [Chapter 26:02]',
+        'Geographical Indications Act [Chapter 26:06]'
+      ]
     }
   ];
 
