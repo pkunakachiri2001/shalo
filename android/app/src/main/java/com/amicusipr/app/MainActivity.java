@@ -1,4 +1,4 @@
-package com.cyberguard.pro;
+package com.amicusipr.app;
 
 import com.getcapacitor.BridgeActivity;
 
